@@ -1,10 +1,12 @@
-
+	import java.awt.Color;
+	
 public class Sprite {
 	//Create variables
 	private int xPosition, yPosition;
 	private int xVelocity, yVelocity;
 	private int width, height;
 	private int initialXPosition, initialYPosition;
+	private Color colour;
 	
 	//Return Variables
 	
@@ -26,7 +28,7 @@ public class Sprite {
 	}
 	
 	//Reset to intial positions
-	public void resetToInitialPositions() {
+	public void resetToInitialPosition() {
 		setXPosition(initialXPosition);
 		setYPosition(initialYPosition);
 	}
@@ -58,6 +60,11 @@ public class Sprite {
 	public void setYPosition(int newY) {
 		yPosition = newY;
 	}
+	
+	//Set color
+	public void setColor(Color newColour) {
+        colour = newColour;
+    }
 	
 	//Set velocity
 	//Set x velocity
