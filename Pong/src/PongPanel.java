@@ -3,7 +3,7 @@
    import java.awt.event.ActionListener;
    import java.awt.event.KeyEvent;
    import java.awt.event.KeyListener;
-   import javax.management.timer.Timer;
+   import javax.swing.Timer;
    import javax.swing.JPanel;
    
    public class PongPanel extends JPanel implements ActionListener, KeyListener {
