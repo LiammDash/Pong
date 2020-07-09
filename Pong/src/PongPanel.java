@@ -15,7 +15,7 @@
 	   boolean gameInitialised = false;
 	   
 	   
-       //Final vars
+       //Final variables
 	   private final static Color BACKGROUND_COLOUR = Color.BLACK;
 	   private final static int TIMER_DELAY = 5;
 	  
