@@ -19,6 +19,9 @@ public class Sprite {
 	public int getWidth() { return width; }
 	public int getHeight() { return height; }
 	
+	//Return color
+	public Color getColor() { return colour; }
+	
 	//Set variables
 	
 	//Set initial positions

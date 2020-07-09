@@ -12,9 +12,22 @@
    import java.awt.Graphics2D;
    
    public class PongPanel extends JPanel implements ActionListener, KeyListener {
-       
+	   boolean gameInitialised = false;
+	   
+	   
+       //Final vars
 	   private final static Color BACKGROUND_COLOUR = Color.BLACK;
 	   private final static int TIMER_DELAY = 5;
+	  
+	  //Create ball object
+	  Ball ball;
+	  
+	  //Create a new ball for the game
+	  public void createObjects() {
+	         ball = new Ball(getWidth(), getHeight());
+	  }
+	  
+	  
 	   
       public PongPanel() {
           setBackground(BACKGROUND_COLOUR);
@@ -24,14 +37,27 @@
       
       //Loop controlling the game
       private void update() {
-          
+    	  //Create objects and then start game running
+    	  if(!gameInitialised) {
+              createObjects();
+              gameInitialised = true;
+         }
       }
       
       //Paint the canvas to default state
       @Override
       public void paintComponent(Graphics g) {
+    	  if(gameInitialised) {
+              paintSprite(g, ball);
+          }
           super.paintComponent(g);
-          paintDottedLine(g);
+          paintDottedLine(g);          
+      }
+      
+      //Paint sprite method
+      private void paintSprite(Graphics g, Sprite sprite) {
+          g.setColor(sprite.getColor());
+          g.fillRect(sprite.getXPosition(), sprite.getYPosition(), sprite.getWidth(), sprite.getHeight());
       }
   
       //Key pressed event
